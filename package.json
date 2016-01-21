@@ -1,0 +1,29 @@
+{
+  "name": "languagelayer",
+  "version": "0.1.0",
+  "description": "npm in",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "language",
+    "translation",
+    "language",
+    "detection"
+  ],
+  "author": "Peter Andreas Moelgaard <admin@petermolgard.com> (http://petermolgaard.com/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmoelgaard/languagelayer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pmoelgaard/languagelayer/issues"
+  },
+  "homepage": "https://github.com/pmoelgaard/languagelayer#readme",
+  "dependencies": {
+    "lodash": "^4.0.0",
+    "request": "^2.67.0"
+  }
+}
