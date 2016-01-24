@@ -1,0 +1,46 @@
+    {
+      "success": true,
+      "results": [
+        [
+          {
+            "language_code": "en",
+            "language_name": "English",
+            "probability": 12.141682269266,
+            "percentage": 100,
+            "reliable_result": true
+          }
+        ],
+        [
+          {
+            "language_code": "de",
+            "language_name": "German",
+            "probability": 23.045066185021,
+            "percentage": 100,
+            "reliable_result": false
+          }
+        ],
+        [
+          {
+            "language_code": "es",
+            "language_name": "Spanish",
+            "probability": 14.560273752505,
+            "percentage": 100,
+            "reliable_result": false
+          },
+          {
+            "language_code": "pt",
+            "language_name": "Portuguese",
+            "probability": 13.98519485076,
+            "percentage": 96.05035652818,
+            "reliable_result": false
+          },
+          {
+            "language_code": "gl",
+            "language_name": "Galician",
+            "probability": 13.585199932687,
+            "percentage": 93.30319033562,
+            "reliable_result": false
+          }
+        ]
+      ]
+    }
