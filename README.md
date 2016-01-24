@@ -2,7 +2,7 @@ LanguageLayer API
 ===
 Node JavaScript wrapper for [LanguageLayer Service](https://languagelayer.com/).
 
-Supports traditional callback call style and A+ promises.
+Supports traditional callbacks and Promises/A+.
 
 &nbsp;
 
@@ -38,8 +38,17 @@ You can find parameters, result set definitions and status codes documented here
 	});
 
 #### Optional Parameters
+
 ##### Secure (only available for Basic, Pro and Enterprise accounts)
 Boolean value to indicate if the calls to the API should use a secure protocol or insecure (HTTP/HTTPS). Defaults to false (HTTP, insecure).
+
+
+## Callbacks vs. Promises
+
+The Promises/A+ implementation used for this is this excellent bare bones library:  
+[https://www.npmjs.com/package/promise](https://www.npmjs.com/package/promise)
+
+The language-detection library supports either mode and use of either one is not mutually exclusive to the alternative, so it's possible to use either just one exclusively or a combination, even in the same call.
 
     
 ## Simple Detection
@@ -207,6 +216,19 @@ Returns the list of Supported Languages, similar to the list found here:
     		...
     	]
     }
+	
+## Example Application
+
+In the [rootdir]/example directory there is a fully functional application which runs all requests against all the endpoints in the API, the examples above can be seen there as source code.
+
+The example application uses a process.env variable to hold the access key.
+
+For running in development environments, it's easy to use the [https://www.npmjs.com/package/dotenv](https://www.npmjs.com/package/dotenv) to load variables from a local file into the environment.
+
+## Tests
+
+The tests are written for any NodeJS testing library, but has been run and targeted at the [https://mochajs.org/](https://mochajs.org/) testing library.
+ 
 	
 &nbsp;
 
