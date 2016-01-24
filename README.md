@@ -228,7 +228,7 @@ The example application uses a process.env variable to hold the access key.
 
 For running in development environments, it's easy to use the [https://www.npmjs.com/package/dotenv](https://www.npmjs.com/package/dotenv) to load variables from a local file into the environment.
 
-## Tests
+## Tests [![Travis](https://img.shields.io/travis/apilayer/language-detection.svg)](Travis)
 
 The tests are written for any NodeJS testing library, but has been run and targeted at the [https://mochajs.org/](https://mochajs.org/) testing library.
 
