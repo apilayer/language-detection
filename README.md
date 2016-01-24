@@ -1,4 +1,4 @@
-LanguageLayer API
+LanguageLayer API [![Travis](https://img.shields.io/travis/pmoelgaard/languagelayer.svg)](Travis)
 ===
 Node JavaScript wrapper for [LanguageLayer Service](https://languagelayer.com/).
 
