@@ -228,9 +228,17 @@ For running in development environments, it's easy to use the [https://www.npmjs
 ## Tests
 
 The tests are written for any NodeJS testing library, but has been run and targeted at the [https://mochajs.org/](https://mochajs.org/) testing library.
- 
-	
-&nbsp;
+
+## Customer Support
+
+Need any assistance? [Get in touch with Customer Support](mailto:support@apilayer.net?subject=%5Blanguagelayer%5D).
+
+## Updates
+Stay up to date by following [@apilayernet](https://twitter.com/apilayernet) on Twitter.
+
+## Legal
+
+All usage of the languagelayer website, API, and services is subject to the [languagelayer Terms & Conditions](https://languagelayer.com/terms) and all annexed legal documents and agreements.
 
 Author
 ---
