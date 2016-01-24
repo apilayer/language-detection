@@ -14,12 +14,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmoelgaard/language-detection.git"
+    "url": "git+https://github.com/apilayer/language-detection.git"
   },
   "bugs": {
-    "url": "https://github.com/pmoelgaard/language-detection/issues"
+    "url": "https://github.com/apilayer/language-detection/issues"
   },
-  "homepage": "https://github.com/pmoelgaard/language-detection#readme",
+  "homepage": "https://github.com/apilayer/language-detection#readme",
   "dependencies": {
     "async": "^1.5.2",
     "lodash": "^4.0.0",
