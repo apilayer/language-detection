@@ -21,7 +21,7 @@ describe('#detect()', function () {
 
     it('result with simple valid query in clear English, result is same length of exactly one', function (done) {
 
-        this.timeout(5000);
+        this.timeout(10000);
 
         var detectQuery = {
             query: 'I like apples & oranges.'
