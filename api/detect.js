@@ -18,6 +18,7 @@
 
 var _ = require('lodash');
 var utils = require('../lib/utils');
+var Promise = require('../lib/promise');
 
 var API = {};
 
@@ -36,8 +37,8 @@ API.detect = function (params, callback) {
         }
     );
 
-    params = _.isString(params) ? { query: params } : params;
-
+    // Prepare Parameters and prepare it for the Request modus
+    params = _.isString(params) ? {query: params} : params;
     params = {
         options: options,
         params: {
@@ -46,19 +47,37 @@ API.detect = function (params, callback) {
         }
     };
 
-    var APIRequest = require('../lib/apirequest');
-    var apiRequest = APIRequest(params, function (err, result) {
 
-        if (err) {
-            return callback(err);
-        }
+    var requestFn = function(resolve, reject) {
 
-        result = _.get(result.body, 'results');
+        var APIRequest = require('../lib/apirequest');
+        APIRequest.request(params, function (err, result) {
 
-        callback(null, result);
-    });
-    return apiRequest;
-}
+            if (err) {
+                return reject(err);
+            }
+
+            result = _.get(result.body, 'results');
+
+            resolve(result);
+        });
+    };
+
+    var promise = new Promise(requestFn);
+
+    if(callback) {
+        promise
+            .then(function(result) {
+                callback(null, result);
+            })
+            .catch(function(err) {
+                callback(err);
+            })
+    }
+
+    return promise;
+};
+
 
 /**
  * Exports the APIs
