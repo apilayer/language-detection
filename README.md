@@ -1,6 +1,5 @@
-LanguageLayer API [![Travis](https://img.shields.io/travis/pmoelgaard/languagelayer.svg)](Travis)
-===
-Node JavaScript wrapper for [LanguageLayer Service](https://languagelayer.com/).
+
+Node JavaScript wrapper for [the languagelayer API](https://languagelayer.com/).
 
 Supports both traditional callbacks and Promises/A+.
 
@@ -15,7 +14,7 @@ Installation
 Configuration
 ---
 
-Before using LanguageLayer API client you have to setup your account and obtain your API Access Key.  
+Before using the languagelayer API client you have to setup your account and obtain your API Access Key.  
 You can get it by signing up at [https://languagelayer.com/product](https://languagelayer.com/product).
 
 &nbsp;
@@ -254,7 +253,7 @@ License
 ---
 Licensed under the The MIT License (MIT)
 
-Copyright (&copy;) 2016 Peter Andreas Moelgaard & APILayer
+Copyright (&copy;) 2016 Peter Andreas Moelgaard & apilayer
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
