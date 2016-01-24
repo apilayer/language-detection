@@ -1,4 +1,4 @@
-var LanguageLayerAPI = require('../index');
+var LanguageLayerAPI = require('language-detection');
 var languageLayerAPI = new LanguageLayerAPI({
     access_key: '[ACCESS_KEY]'
 });
