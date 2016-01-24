@@ -1,7 +1,7 @@
 {
   "name": "language-detection",
   "version": "0.1.10",
-  "description": "Node JavaScript wrapper for LanguageLayer Service",
+  "description": "Node JavaScript wrapper for languagelayer API Service",
   "main": "index.js",
   "scripts": {
     "test": "mocha test"
@@ -14,12 +14,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmoelgaard/languagelayer.git"
+    "url": "git+https://github.com/pmoelgaard/language-detection.git"
   },
   "bugs": {
-    "url": "https://github.com/pmoelgaard/languagelayer/issues"
+    "url": "https://github.com/pmoelgaard/language-detection/issues"
   },
-  "homepage": "https://github.com/pmoelgaard/languagelayer#readme",
+  "homepage": "https://github.com/pmoelgaard/language-detection#readme",
   "dependencies": {
     "async": "^1.5.2",
     "lodash": "^4.0.0",
