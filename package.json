@@ -1,6 +1,6 @@
 {
   "name": "language-detection",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Node JavaScript wrapper for LanguageLayer Service",
   "main": "index.js",
   "scripts": {
