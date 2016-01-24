@@ -19,7 +19,10 @@
 var _ = require('lodash');
 var utils = require('../lib/utils');
 var Promise = require('../lib/promise');
+var APIResult = require('../lib/apirequest-result');
+var APIError = require('../lib/apirequest-error');
 
+// Declare our main module scope
 var API = {};
 
 /**
@@ -31,6 +34,24 @@ var API = {};
  */
 API.detect = function (params, callback) {
 
+    // Ensure callback is set to make the main functions slightly simpler by avoiding nested conditionals
+    callback = callback || _.noop;
+
+
+    // Input Validation
+    // TODO Add Promise support to the input validation
+    if (!params) {
+        return callback(new APIError.MissingArgumentError('detect', 'params'));
+    }
+    else if (!params.query) {
+        return callback(new APIError.MissingArgumentError('detect', 'params.query'));
+    }
+    else if (! _.isString(params.query)) {
+        return callback(new APIError.InvalidArgumentError('detect', 'params.query', 'type string'));
+    }
+
+
+    // Set Options for the Request
     var options = utils.extend({}, this.options, {
             service: 'detect',
             method: 'GET'
@@ -38,7 +59,6 @@ API.detect = function (params, callback) {
     );
 
     // Prepare Parameters and prepare it for the Request modus
-    params = _.isString(params) ? {query: params} : params;
     params = {
         options: options,
         params: {
@@ -47,34 +67,38 @@ API.detect = function (params, callback) {
         }
     };
 
-
-    var requestFn = function(resolve, reject) {
+    // Declare the main function where we call the API
+    var requestFn = function (resolve, reject) {
 
         var APIRequest = require('../lib/apirequest');
         APIRequest.request(params, function (err, result) {
 
+            // If an error happens, we return early
             if (err) {
                 return reject(err);
             }
 
-            result = _.get(result.body, 'results');
+            // parse the results to make the caller only get the actual data and hide the transport information
+            result = _.get(result, APIResult.BODY_RESULTS_EXPR);
 
-            resolve(result);
+            // and we resolve and return (not necessary to return, but keeps consistency)
+            return resolve(result);
         });
     };
 
+    // Declare the promise we will use to wrap the request call
     var promise = new Promise(requestFn);
 
-    if(callback) {
-        promise
-            .then(function(result) {
-                callback(null, result);
-            })
-            .catch(function(err) {
-                callback(err);
-            })
-    }
+    // We offer callback support in addition to promise style (we know callback is set as we default it in the beginning)
+    promise
+        .then(function (result) {
+            callback(null, result);
+        })
+        .catch(function (err) {
+            callback(err);
+        });
 
+    // return the promise to the caller
     return promise;
 };
 

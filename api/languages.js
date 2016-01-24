@@ -18,11 +18,14 @@
 
 var _ = require('lodash');
 var utils = require('../lib/utils');
+var Promise = require('../lib/promise');
+var APIResult = require('../lib/apirequest-result');
 
+// Declare our main module scope
 var API = {};
 
 /**
- * Detect Language from String
+ * List of Supported Languages
  *
  * @param  {object} params - Parameters for request
  * @param  {callback} callback - The callback that handles the response.
@@ -30,14 +33,18 @@ var API = {};
  */
 API.languages = function (params, callback) {
 
+    // Ensure callback is set to make the main functions slightly simpler by avoiding nested conditionals
+    callback = callback || _.noop;
+
+
+    // Set Options for the Request
     var options = utils.extend({}, this.options, {
             service: 'languages',
             method: 'GET'
         }
     );
 
-    params = _.isString(params) ? { query: params } : params;
-
+    // Prepare Parameters and prepare it for the Request modus
     params = {
         options: options,
         params: {
@@ -46,21 +53,41 @@ API.languages = function (params, callback) {
         }
     };
 
-    var APIRequest = require('../lib/apirequest');
-    var apiRequest = APIRequest(params, function (err, result) {
+    // Declare the main function where we call the API
+    var requestFn = function (resolve, reject) {
 
-        if (err) {
-            return callback(err);
-        }
+        var APIRequest = require('../lib/apirequest');
+        APIRequest.request(params, function (err, result) {
 
-        result = _.get(result.body, 'results');
+            // If an error happens, we return early
+            if (err) {
+                return reject(err);
+            }
 
-        if(_.isFunction(callback) ) {
+            // parse the results to make the caller only get the actual data and hide the transport information
+            result = _.get(result, APIResult.BODY_LANGUAGES_EXPR);
+
+            // and we resolve and return (not necessary to return, but keeps consistency)
+            return resolve(result);
+        });
+    };
+
+    // Declare the promise we will use to wrap the request call
+    var promise = new Promise(requestFn);
+
+    // We offer callback support in addition to promise style (we know callback is set as we default it in the beginning)
+    promise
+        .then(function (result) {
             callback(null, result);
-        }
-    });
-    return apiRequest;
-}
+        })
+        .catch(function (err) {
+            callback(err);
+        });
+
+    // return the promise to the caller
+    return promise;
+};
+
 
 /**
  * Exports the APIs

@@ -18,11 +18,14 @@
 
 var _ = require('lodash');
 var utils = require('../lib/utils');
+var Promise = require('../lib/promise');
+var APIResult = require('../lib/apirequest-result');
 
+// Declare our main module scope
 var API = {};
 
 /**
- * Detect Language from String
+ * Detect Language from an Array of Strings
  *
  * @param  {object} params - Parameters for request
  * @param  {callback} callback - The callback that handles the response.
@@ -30,14 +33,34 @@ var API = {};
  */
 API.batch = function (params, callback) {
 
+    // Ensure callback is set to make the main functions slightly simpler by avoiding nested conditionals
+    callback = callback || _.noop;
+
+
+    // Input Validation
+    // TODO Add Promise support to the input validation
+    if (!params) {
+        return callback(new APIError.MissingArgumentError('batch', 'params'));
+    }
+    else if (!params.query) {
+        return callback(new APIError.MissingArgumentError('batch', 'params.query'));
+    }
+    else if (params.query.length < 1) {
+        return callback(new APIError.InvalidArgumentError('batch', 'params.query', 'min. 1'));
+    }
+    else if (params.query.length > 100) {
+        return callback(new APIError.InvalidArgumentError('batch', 'params.query', 'max. 100'));
+    }
+
+
+    // Set Options for the Request
     var options = utils.extend({}, this.options, {
             service: 'batch',
-            method: 'GET'
+            method: 'POST'
         }
     );
 
-    params = _.isString(params) ? { query: params } : params;
-
+    // Prepare Parameters and prepare it for the Request modus
     params = {
         options: options,
         params: {
@@ -46,19 +69,41 @@ API.batch = function (params, callback) {
         }
     };
 
-    var APIRequest = require('../lib/apirequest');
-    var apiRequest = APIRequest(params, function (err, result) {
+    // Declare the main function where we call the API
+    var requestFn = function (resolve, reject) {
 
-        if (err) {
-            return callback(err);
-        }
+        var APIRequest = require('../lib/apirequest');
+        APIRequest.request(params, function (err, result) {
 
-        result = _.get(result.body, 'results');
+            // If an error happens, we return early
+            if (err) {
+                return reject(err);
+            }
 
-        callback(null, result);
-    });
-    return apiRequest;
-}
+            // parse the results to make the caller only get the actual data and hide the transport information
+            result = _.get(result, APIResult.BODY_RESULTS_EXPR);
+
+            // and we resolve and return (not necessary to return, but keeps consistency)
+            return resolve(result);
+        });
+    };
+
+    // Declare the promise we will use to wrap the request call
+    var promise = new Promise(requestFn);
+
+    // We offer callback support in addition to promise style (we know callback is set as we default it in the beginning)
+    promise
+        .then(function (result) {
+            callback(null, result);
+        })
+        .catch(function (err) {
+            callback(err);
+        });
+
+    // return the promise to the caller
+    return promise;
+};
+
 
 /**
  * Exports the APIs

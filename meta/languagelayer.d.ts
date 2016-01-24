@@ -3,10 +3,26 @@ declare module apilayer.languagelayer {
     interface ILanguageLayerAPIOptions {
         access_key:string;
     }
+
     interface IDetectQuery {
         query:string;
-        showQuery:number;
+        showQuery?:number;
+        callback?:string;
+        format?:number;
     }
+
+    interface IBatchQuery {
+        query:Array<string>;
+        showQuery?:number;
+        callback?:string;
+        format?:number;
+    }
+
+    interface ILanguageQuery {
+        callback?:string;
+        format?:number;
+    }
+
 
     interface IPromise {
         then(handler?:IPromiseResolveHandlerFunction) : IPromise;
@@ -28,6 +44,8 @@ declare module apilayer.languagelayer {
     interface ILanguageLayerAPI {
         (options:ILanguageLayerAPIOptions);
         detect(query:IDetectQuery, callback?:ICallbackFunction) : IPromise;
+        batch(query:IBatchQuery, callback?:ICallbackFunction) : IPromise;
+        languages(query?:ILanguageQuery, callback?:ICallbackFunction) : IPromise;
     }
 
 }
