@@ -32,8 +32,14 @@ You can find parameters, result set definitions and status codes documented here
 	var LanguageLayerAPI = require('language-detection');
 	
 	var languageLayerAPI = new LanguageLayerAPI({
-    	access_key: [ACCESS_KEY]
+    	access_key: [ACCESS_KEY],
+    	show_query: [0|1] (defaults to 0)
+    	secure: [true|false] (defaults to false)
 	});
+
+#### Optional Parameters
+##### Secure (only available for Basic, Pro and Enterprise accounts)
+Boolean value to indicate if the calls to the API should use a secure protocol or insecure (HTTP/HTTPS). Defaults to false (HTTP, insecure).
 
     
 ### Simple Detection
