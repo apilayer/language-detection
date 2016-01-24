@@ -16,14 +16,15 @@
 
 'use strict';
 
-var _ = require('lodash');
 var utils = require('../lib/utils');
 var Promise = require('../lib/promise');
 var APIResult = require('../lib/apirequest-result');
 var APIError = require('../lib/apirequest-error');
 
+
 // Declare our main module scope
 var API = {};
+
 
 /**
  * Detect Language from String
@@ -32,43 +33,43 @@ var API = {};
  * @param  {callback} callback - The callback that handles the response.
  * @return {object} Result
  */
-API.detect = function (params, callback) {
-
-    // Ensure callback is set to make the main functions slightly simpler by avoiding nested conditionals
-    callback = callback || _.noop;
+API.detect = function (params, callback, options) {
 
 
-    // Input Validation
-    // TODO Add Promise support to the input validation
-    if (!params) {
-        return callback(new APIError.MissingArgumentError('detect', 'params'));
-    }
-    else if (!params.query) {
-        return callback(new APIError.MissingArgumentError('detect', 'params.query'));
-    }
-    else if (! _.isString(params.query)) {
-        return callback(new APIError.InvalidArgumentError('detect', 'params.query', 'type string'));
-    }
-
-
-    // Set Options for the Request
-    var options = utils.extend({}, this.options, {
+    options = utils.defaults({}, options, this.options, {
             service: 'detect',
             method: 'GET'
         }
     );
 
-    // Prepare Parameters and prepare it for the Request modus
-    params = {
-        options: options,
-        params: {
-            json: true,
-            qs: params
-        }
-    };
 
-    // Declare the main function where we call the API
-    var requestFn = function (resolve, reject) {
+    // Declare the promise we will use to wrap the request call
+    var promise = new Promise(function (resolve, reject) {
+
+
+        // Input Validation (we only do the most basic, and let the server do the most so validation will always be up to date)
+        if (!params) {
+            return reject(new APIError.MissingArgumentError('detect', 'params'));
+        }
+
+
+        // URI Encoding of the Query as per recommendation, and ensuring we are working on a new instance of the params
+        if (params.query && utils.isString(params.query)) {
+            params = utils.extend({}, params, {
+                query: encodeURIComponent(params.query)
+            });
+        }
+
+
+        // Prepare Parameters and prepare it for the Request modus
+        params = {
+            options: options,
+            params: {
+                json: true,
+                qs: params
+            }
+        };
+
 
         var APIRequest = require('../lib/apirequest');
         APIRequest.request(params, function (err, result) {
@@ -79,15 +80,16 @@ API.detect = function (params, callback) {
             }
 
             // parse the results to make the caller only get the actual data and hide the transport information
-            result = _.get(result, APIResult.BODY_RESULTS_EXPR);
+            result = utils.get(result, APIResult.BODY_RESULTS_EXPR);
 
             // and we resolve and return (not necessary to return, but keeps consistency)
             return resolve(result);
         });
-    };
+    });
 
-    // Declare the promise we will use to wrap the request call
-    var promise = new Promise(requestFn);
+
+    // Ensure callback is set to make the main functions slightly simpler by avoiding nested conditionals
+    callback = callback || utils.noop;
 
     // We offer callback support in addition to promise style (we know callback is set as we default it in the beginning)
     promise
@@ -97,6 +99,7 @@ API.detect = function (params, callback) {
         .catch(function (err) {
             callback(err);
         });
+
 
     // return the promise to the caller
     return promise;

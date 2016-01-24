@@ -1,0 +1,697 @@
+{
+  "success": true,
+  "languages": [
+    {
+      "language_code": "en",
+      "language_name": "English"
+    },
+    {
+      "language_code": "af",
+      "language_name": "Afrikaans"
+    },
+    {
+      "language_code": "ar",
+      "language_name": "Arabic"
+    },
+    {
+      "language_code": "az",
+      "language_name": "Azerbaijani"
+    },
+    {
+      "language_code": "be",
+      "language_name": "Belarusian"
+    },
+    {
+      "language_code": "bg",
+      "language_name": "Bulgarian"
+    },
+    {
+      "language_code": "bn",
+      "language_name": "Bengali"
+    },
+    {
+      "language_code": "bs",
+      "language_name": "Bosnian"
+    },
+    {
+      "language_code": "ca",
+      "language_name": "Catalan"
+    },
+    {
+      "language_code": "ceb",
+      "language_name": "Cebuano"
+    },
+    {
+      "language_code": "cs",
+      "language_name": "Czech"
+    },
+    {
+      "language_code": "cy",
+      "language_name": "Welsh"
+    },
+    {
+      "language_code": "da",
+      "language_name": "Danish"
+    },
+    {
+      "language_code": "de",
+      "language_name": "German"
+    },
+    {
+      "language_code": "el",
+      "language_name": "Greek"
+    },
+    {
+      "language_code": "eo",
+      "language_name": "Esperanto"
+    },
+    {
+      "language_code": "es",
+      "language_name": "Spanish"
+    },
+    {
+      "language_code": "et",
+      "language_name": "Estonian"
+    },
+    {
+      "language_code": "eu",
+      "language_name": "Basque"
+    },
+    {
+      "language_code": "fa",
+      "language_name": "Persian"
+    },
+    {
+      "language_code": "fi",
+      "language_name": "Finnish"
+    },
+    {
+      "language_code": "fr",
+      "language_name": "French"
+    },
+    {
+      "language_code": "ga",
+      "language_name": "Irish"
+    },
+    {
+      "language_code": "gl",
+      "language_name": "Galician"
+    },
+    {
+      "language_code": "gu",
+      "language_name": "Gujarati"
+    },
+    {
+      "language_code": "ha",
+      "language_name": "Hausa"
+    },
+    {
+      "language_code": "hi",
+      "language_name": "Hindi"
+    },
+    {
+      "language_code": "hmn",
+      "language_name": "Hmong"
+    },
+    {
+      "language_code": "hr",
+      "language_name": "Croatian"
+    },
+    {
+      "language_code": "ht",
+      "language_name": "Haitian Creole"
+    },
+    {
+      "language_code": "hu",
+      "language_name": "Hungarian"
+    },
+    {
+      "language_code": "hy",
+      "language_name": "Armenian"
+    },
+    {
+      "language_code": "id",
+      "language_name": "Indonesian"
+    },
+    {
+      "language_code": "ig",
+      "language_name": "Igbo"
+    },
+    {
+      "language_code": "is",
+      "language_name": "Icelandic"
+    },
+    {
+      "language_code": "it",
+      "language_name": "Italian"
+    },
+    {
+      "language_code": "iw",
+      "language_name": "Hebrew"
+    },
+    {
+      "language_code": "ja",
+      "language_name": "Japanese"
+    },
+    {
+      "language_code": "jw",
+      "language_name": "Javanese"
+    },
+    {
+      "language_code": "ka",
+      "language_name": "Georgian"
+    },
+    {
+      "language_code": "kk",
+      "language_name": "Kazakh"
+    },
+    {
+      "language_code": "km",
+      "language_name": "Khmer"
+    },
+    {
+      "language_code": "kn",
+      "language_name": "Kannada"
+    },
+    {
+      "language_code": "ko",
+      "language_name": "Korean"
+    },
+    {
+      "language_code": "la",
+      "language_name": "Latin"
+    },
+    {
+      "language_code": "lo",
+      "language_name": "Laotian"
+    },
+    {
+      "language_code": "lt",
+      "language_name": "Lithuanian"
+    },
+    {
+      "language_code": "lv",
+      "language_name": "Latvian"
+    },
+    {
+      "language_code": "mg",
+      "language_name": "Malagasy"
+    },
+    {
+      "language_code": "mi",
+      "language_name": "Maori"
+    },
+    {
+      "language_code": "mk",
+      "language_name": "Macedonian"
+    },
+    {
+      "language_code": "ml",
+      "language_name": "Malayalam"
+    },
+    {
+      "language_code": "mn",
+      "language_name": "Mongolian"
+    },
+    {
+      "language_code": "mr",
+      "language_name": "Marathi"
+    },
+    {
+      "language_code": "ms",
+      "language_name": "Malay"
+    },
+    {
+      "language_code": "mt",
+      "language_name": "Maltese"
+    },
+    {
+      "language_code": "ne",
+      "language_name": "Nepali"
+    },
+    {
+      "language_code": "nl",
+      "language_name": "Dutch"
+    },
+    {
+      "language_code": "no",
+      "language_name": "Norwegian"
+    },
+    {
+      "language_code": "ny",
+      "language_name": "Chichewa"
+    },
+    {
+      "language_code": "pa",
+      "language_name": "Punjabi"
+    },
+    {
+      "language_code": "pl",
+      "language_name": "Polish"
+    },
+    {
+      "language_code": "pt",
+      "language_name": "Portuguese"
+    },
+    {
+      "language_code": "ro",
+      "language_name": "Romanian"
+    },
+    {
+      "language_code": "ru",
+      "language_name": "Russian"
+    },
+    {
+      "language_code": "si",
+      "language_name": "Sinhala"
+    },
+    {
+      "language_code": "sk",
+      "language_name": "Slovak"
+    },
+    {
+      "language_code": "sl",
+      "language_name": "Slovenian"
+    },
+    {
+      "language_code": "so",
+      "language_name": "Slovenian"
+    },
+    {
+      "language_code": "sq",
+      "language_name": "Albanian"
+    },
+    {
+      "language_code": "sr",
+      "language_name": "Serbian"
+    },
+    {
+      "language_code": "st",
+      "language_name": "Sesotho"
+    },
+    {
+      "language_code": "su",
+      "language_name": "Sundanese"
+    },
+    {
+      "language_code": "sv",
+      "language_name": "Swedish"
+    },
+    {
+      "language_code": "sw",
+      "language_name": "Swahili"
+    },
+    {
+      "language_code": "ta",
+      "language_name": "Tamil"
+    },
+    {
+      "language_code": "te",
+      "language_name": "Telugu"
+    },
+    {
+      "language_code": "tg",
+      "language_name": "Tajik"
+    },
+    {
+      "language_code": "th",
+      "language_name": "Thai"
+    },
+    {
+      "language_code": "tr",
+      "language_name": "Turkish"
+    },
+    {
+      "language_code": "uk",
+      "language_name": "Ukrainian"
+    },
+    {
+      "language_code": "ur",
+      "language_name": "Urdu"
+    },
+    {
+      "language_code": "uz",
+      "language_name": "Uzbek"
+    },
+    {
+      "language_code": "vi",
+      "language_name": "Vietnamese"
+    },
+    {
+      "language_code": "fil",
+      "language_name": "Fillipino"
+    },
+    {
+      "language_code": "yi",
+      "language_name": "Yiddish"
+    },
+    {
+      "language_code": "yo",
+      "language_name": "Yoruba"
+    },
+    {
+      "language_code": "zh",
+      "language_name": "Chinese Simplified"
+    },
+    {
+      "language_code": "zhh",
+      "language_name": "Chinese Traditional"
+    },
+    {
+      "language_code": "zu",
+      "language_name": "Zulu"
+    },
+    {
+      "language_code": "gax",
+      "language_name": "Oromo"
+    },
+    {
+      "language_code": "fuc",
+      "language_name": "Pulaar"
+    },
+    {
+      "language_code": "ckb",
+      "language_name": "Kurdish"
+    },
+    {
+      "language_code": "tgl",
+      "language_name": "Tagalog"
+    },
+    {
+      "language_code": "mad",
+      "language_name": "Madurese"
+    },
+    {
+      "language_code": "qug",
+      "language_name": "Quichua"
+    },
+    {
+      "language_code": "kin",
+      "language_name": "Kinyarwanda"
+    },
+    {
+      "language_code": "lin",
+      "language_name": "Lingala"
+    },
+    {
+      "language_code": "hms",
+      "language_name": "Qiandong Miao"
+    },
+    {
+      "language_code": "ilo",
+      "language_name": "Iloko"
+    },
+    {
+      "language_code": "uig",
+      "language_name": "Uighur"
+    },
+    {
+      "language_code": "aka",
+      "language_name": "Akan"
+    },
+    {
+      "language_code": "hil",
+      "language_name": "Hiligaynon"
+    },
+    {
+      "language_code": "sna",
+      "language_name": "Shona"
+    },
+    {
+      "language_code": "xho",
+      "language_name": "Xhosa"
+    },
+    {
+      "language_code": "min",
+      "language_name": "Minangkabau"
+    },
+    {
+      "language_code": "lua",
+      "language_name": "Luba-Kasai"
+    },
+    {
+      "language_code": "run",
+      "language_name": "Rundi"
+    },
+    {
+      "language_code": "tuk",
+      "language_name": "Turkmen"
+    },
+    {
+      "language_code": "suk",
+      "language_name": "Sukuma"
+    },
+    {
+      "language_code": "sag",
+      "language_name": "Sango"
+    },
+    {
+      "language_code": "nno",
+      "language_name": "Nynorsk"
+    },
+    {
+      "language_code": "mos",
+      "language_name": "Mossi"
+    },
+    {
+      "language_code": "sot",
+      "language_name": "Sotho"
+    },
+    {
+      "language_code": "bcl",
+      "language_name": "Central Bikol"
+    },
+    {
+      "language_code": "umb",
+      "language_name": "Umbundu"
+    },
+    {
+      "language_code": "tsn",
+      "language_name": "Tswana"
+    },
+    {
+      "language_code": "nso",
+      "language_name": "Northern Sotho"
+    },
+    {
+      "language_code": "ban",
+      "language_name": "Balinese"
+    },
+    {
+      "language_code": "bug",
+      "language_name": "Buginese"
+    },
+    {
+      "language_code": "knc",
+      "language_name": "Kanuri"
+    },
+    {
+      "language_code": "ibb",
+      "language_name": "Ibibio"
+    },
+    {
+      "language_code": "lug",
+      "language_name": "Luganda"
+    },
+    {
+      "language_code": "ace",
+      "language_name": "Acehnese"
+    },
+    {
+      "language_code": "bam",
+      "language_name": "Bambara"
+    },
+    {
+      "language_code": "kmb",
+      "language_name": "Kimbundu"
+    },
+    {
+      "language_code": "lun",
+      "language_name": "Lunda"
+    },
+    {
+      "language_code": "tzm",
+      "language_name": "Tamazight"
+    },
+    {
+      "language_code": "war",
+      "language_name": "Waray"
+    },
+    {
+      "language_code": "wol",
+      "language_name": "Wolof"
+    },
+    {
+      "language_code": "nds",
+      "language_name": "Low German"
+    },
+    {
+      "language_code": "vmw",
+      "language_name": "Makhuwa"
+    },
+    {
+      "language_code": "ewe",
+      "language_name": "Ewe"
+    },
+    {
+      "language_code": "ayr",
+      "language_name": "Aymara"
+    },
+    {
+      "language_code": "bem",
+      "language_name": "Bemba"
+    },
+    {
+      "language_code": "bci",
+      "language_name": "Baoul\u00e9"
+    },
+    {
+      "language_code": "pam",
+      "language_name": "Pampanga"
+    },
+    {
+      "language_code": "tiv",
+      "language_name": "Tiv"
+    },
+    {
+      "language_code": "tpi",
+      "language_name": "Tok Pisin"
+    },
+    {
+      "language_code": "kir",
+      "language_name": "Kirghiz"
+    },
+    {
+      "language_code": "ssw",
+      "language_name": "Swati"
+    },
+    {
+      "language_code": "nyn",
+      "language_name": "Nyankole"
+    },
+    {
+      "language_code": "yao",
+      "language_name": "Yao"
+    },
+    {
+      "language_code": "quz",
+      "language_name": "Cusco Quechua"
+    },
+    {
+      "language_code": "rmy",
+      "language_name": "Vlax Romani"
+    },
+    {
+      "language_code": "src",
+      "language_name": "Logudorese Sardinian"
+    },
+    {
+      "language_code": "sco",
+      "language_name": "Scots"
+    },
+    {
+      "language_code": "tso",
+      "language_name": "Tsonga"
+    },
+    {
+      "language_code": "men",
+      "language_name": "Mende"
+    },
+    {
+      "language_code": "fon",
+      "language_name": "Fon"
+    },
+    {
+      "language_code": "nhn",
+      "language_name": "Central Nahuatl"
+    },
+    {
+      "language_code": "dip",
+      "language_name": "Dinka"
+    },
+    {
+      "language_code": "kde",
+      "language_name": "Makonde"
+    },
+    {
+      "language_code": "snn",
+      "language_name": "Siona"
+    },
+    {
+      "language_code": "kbp",
+      "language_name": "Kabiy\u00e8"
+    },
+    {
+      "language_code": "tem",
+      "language_name": "Timne"
+    },
+    {
+      "language_code": "toi",
+      "language_name": "Tonga"
+    },
+    {
+      "language_code": "snk",
+      "language_name": "Soninke"
+    },
+    {
+      "language_code": "cjk",
+      "language_name": "Chokwe"
+    },
+    {
+      "language_code": "ada",
+      "language_name": "Adangme"
+    },
+    {
+      "language_code": "bin",
+      "language_name": "Bini"
+    },
+    {
+      "language_code": "gaa",
+      "language_name": "Ga"
+    },
+    {
+      "language_code": "kng",
+      "language_name": "Kongo"
+    },
+    {
+      "language_code": "ndo",
+      "language_name": "Ndonga"
+    },
+    {
+      "language_code": "quy",
+      "language_name": "Ayacucho Quechua"
+    },
+    {
+      "language_code": "rmn",
+      "language_name": "Balkan Romani"
+    },
+    {
+      "language_code": "tat",
+      "language_name": "Tatar"
+    },
+    {
+      "language_code": "mai",
+      "language_name": "Maithili"
+    },
+    {
+      "language_code": "bho",
+      "language_name": "Bhojpuri"
+    },
+    {
+      "language_code": "mag",
+      "language_name": "Magahi"
+    },
+    {
+      "language_code": "amh",
+      "language_name": "Amharic"
+    },
+    {
+      "language_code": "tir",
+      "language_name": "Tigrinya"
+    },
+    {
+      "language_code": "emk",
+      "language_name": "Maninka"
+    }
+  ]
+}
