@@ -2,7 +2,7 @@ LanguageLayer API [![Travis](https://img.shields.io/travis/pmoelgaard/languagela
 ===
 Node JavaScript wrapper for [LanguageLayer Service](https://languagelayer.com/).
 
-Supports traditional callbacks and Promises/A+.
+Supports both traditional callbacks and Promises/A+.
 
 &nbsp;
 
@@ -16,14 +16,14 @@ Configuration
 ---
 
 Before using LanguageLayer API client you have to setup your account and obtain your API Access Key.  
-You can get it by signing up at [https://languagelayer.com/product](https://languagelayer.com/product)
+You can get it by signing up at [https://languagelayer.com/product](https://languagelayer.com/product).
 
 &nbsp;
 
 Usage
 ---
 
-The general API is documented here: [https://languagelayer.com/documentation](https://languagelayer.com/documentation)
+The general API is documented here: [https://languagelayer.com/documentation](https://languagelayer.com/documentation).  
 You can find parameters, result set definitions and status codes documented here as well.
 
 
@@ -33,8 +33,7 @@ You can find parameters, result set definitions and status codes documented here
 	
 	var languageLayerAPI = new LanguageLayerAPI({
     	access_key: [ACCESS_KEY],
-    	show_query: [0|1] (defaults to 0)
-    	secure: [true|false] (defaults to false)
+    	secure: [true|false] (Optional, defaults to false)
 	});
 
 #### Optional Parameters
@@ -48,7 +47,7 @@ Boolean value to indicate if the calls to the API should use a secure protocol o
 The Promises/A+ implementation used for this is this excellent bare bones library:  
 [https://www.npmjs.com/package/promise](https://www.npmjs.com/package/promise)
 
-The language-detection library supports either mode and use of either one is not mutually exclusive to the alternative, so it's possible to use either just one exclusively or a combination, even in the same call.
+The language-detection library supports either mode and use of either one is not mutually exclusive to the alternative, so it's possible to use one exclusively or a combination, even in the same call, both the callback will be called and the promise handlers invoked.
 
     
 ## Simple Detection
@@ -132,6 +131,7 @@ Takes an array of strings and detects the language with a corresponding list of 
       	"results": [
 			[
 	          	{
+	          		"query": "I like apples & oranges.",
 	            	"language_code": "en",
 	            	"language_name": "English",
 	            	"probability": 12.141682269266,
@@ -141,6 +141,7 @@ Takes an array of strings and detects the language with a corresponding list of 
 	        ],
 		    [
 	        	{
+	        		"query": "Guten Tag mein Herr, wie geht es Ihnen?",
 	            	"language_code": "de",
 	            	"language_name": "German",
 	            	"probability": 23.045066185021,
@@ -150,6 +151,7 @@ Takes an array of strings and detects the language with a corresponding list of 
 	        ],
 	        [
 	          	{
+	          		"query": "Buenos días señor, cómo está hoy?",
 	            	"language_code": "es",
 	            	"language_name": "Spanish",
 	            	"probability": 14.560273752505,
@@ -157,6 +159,7 @@ Takes an array of strings and detects the language with a corresponding list of 
 	            	"reliable_result": false
 	          	},
 	          	{
+	          		"query": "Buenos días señor, cómo está hoy?",
 	            	"language_code": "pt",
 	            	"language_name": "Portuguese",
 	            	"probability": 13.98519485076,
@@ -164,6 +167,7 @@ Takes an array of strings and detects the language with a corresponding list of 
 	            	"reliable_result": false
 	          	},
 	          	{
+	          		"query": "Buenos días señor, cómo está hoy?",
 	            	"language_code": "gl",
 	            	"language_name": "Galician",
 	            	"probability": 13.585199932687,
