@@ -36,7 +36,8 @@ function API(options) {
         {
             host: 'apilayer.net',
             context: 'api',
-            ssl: true
+            key_type: 'access_key',
+            secure: false
         }
     );
 

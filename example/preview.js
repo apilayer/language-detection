@@ -1,6 +1,6 @@
 var LanguageLayerAPI = require('language-detection');
 var languageLayerAPI = new LanguageLayerAPI({
-    access_key: '[ACCESS_KEY]'
+    access_key: 'aab530f2dd1856e238a7c9875ca3876c'
 });
 
 var detectQuery = {
