@@ -50,7 +50,7 @@ describe('#batch()', function () {
                 'Good afternoon, how are you today?',
                 'Guten Tag mein Herr, wie geht es Ihnen?',
                 'Buenos días señor, cómo está hoy?'
-            ],
+            ]
         };
 
         languageLayerAPI.batch(detectQuery)
@@ -86,7 +86,7 @@ describe('#languages()', function () {
 
                     // Call the file embdeded in the test folder
                     var fs = require('fs');
-                    fs.readFile(__dirname + '/languages.json', {encoding: 'UTF8'}, function (err, result) {
+                    fs.readFile(path.join(__dirname, 'data', 'languages.json'), {encoding: 'UTF8'}, function (err, result) {
                         result = JSON.parse(result);
                         stepCallback(err, result.languages);
                     });
